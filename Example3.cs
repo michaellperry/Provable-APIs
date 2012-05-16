@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace QED2._02
+namespace ProvableCode.Patterns
 {
 	public static class Example3
 	{
@@ -26,7 +26,7 @@ namespace QED2._02
 			Customer customer = new Customer()
 			{
 				Name = "Michael L Perry",
-				PhoneNumber = "(214) 282-7909"
+				PhoneNumber = "(214) 222-9999"
 			};
 
 			if (!customer.Validate())
@@ -38,7 +38,7 @@ namespace QED2._02
 			Customer customer = new Customer()
 			{
 				Name = "Michael L Perry",
-				PhoneNumber = "282-7909"
+				PhoneNumber = "222-9999"
 			};
 		}
 	}

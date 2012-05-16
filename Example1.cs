@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QED2._02
+namespace ProvableCode.Patterns
 {
     public static class Example1
 	{
