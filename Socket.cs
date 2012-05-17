@@ -22,16 +22,16 @@ namespace ProvableCode.Patterns
 	{
 	}
 
-	/*
-	* You cannot use a Socket returned from Accept to accept any additional connections from the connection queue.
-    * You cannot call Accept, Bind, Connect, Listen, Receive, or Send if the socket has been closed.
+    /*
+    * You have to either call Connect or Accept before Sending and Receiving data.
+    * You cannot use a Socket returned from Accept to accept any additional connections from the connection queue.
     * You must call Bind before you can call the Listen method.
     * You must call Listen before calling Accept.
-    * Connect(string host, int port) can only be called if addressFamily is either InterNetwork or InterNetworkV6.
     * Connect cannot be called if Listen has been called.
-    * You have to either call Connect or Accept before Sending and Receiving data.
     * If the socket has been previously disconnected, then you cannot use Connect to restore the connection.
-	*/
+    * You cannot call Accept, Bind, Connect, Listen, Receive, or Send if the socket has been closed.
+    * Connect(string host, int port) can only be called if addressFamily is either InterNetwork or InterNetworkV6.
+    */
     public class Socket : IDisposable
 	{
 		public Socket(SocketInformation socketInformation) { }
