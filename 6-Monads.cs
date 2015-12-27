@@ -42,13 +42,23 @@ namespace ProvableCode.Patterns
             if (File.Exists("filename.csv"))
             {
                 var file = File.Open("filename.csv");
-                while (!file.AtEnd)
+                try
                 {
-                    string line = file.ReadLine();
-                    var record = Record.Parse(line);
-                    records.Add(record);
+                    while (!file.AtEnd)
+                    {
+                        string line = file.ReadLine();
+                        var record = Record.Parse(line);
+                        records.Add(record);
+                    }
                 }
-                file.Close();
+                catch (Exception x)
+                {
+                    ReportError(x.Message);
+                }
+                finally
+                {
+                    file.Close();
+                }
             }
         }
 
@@ -56,13 +66,23 @@ namespace ProvableCode.Patterns
         {
             List<Record> records = new List<Record>();
             var file = File.Open("filename.csv");
-            while (!file.AtEnd)
+            try
             {
-                string line = file.ReadLine();
-                var record = Record.Parse(line);
-                records.Add(record);
+                while (!file.AtEnd)
+                {
+                    string line = file.ReadLine();
+                    var record = Record.Parse(line);
+                    records.Add(record);
+                }
             }
-            file.Close();
+            catch (Exception x)
+            {
+                ReportError(x.Message);
+            }
+            finally
+            {
+                file.Close();
+            }
         }
 
         public static void Wrong2()
@@ -77,6 +97,7 @@ namespace ProvableCode.Patterns
                     var record = Record.Parse(line);
                     records.Add(record);
                 }
+                file.Close();
             }
         }
 
@@ -86,15 +107,25 @@ namespace ProvableCode.Patterns
             if (File.Exists("filename.csv"))
             {
                 var file = File.Open("filename.csv");
-                while (true)
+                try
                 {
-                    string line = file.ReadLine();
-                    if (line == null)
-                        break;
-                    var record = Record.Parse(line);
-                    records.Add(record);
+                    while (true)
+                    {
+                        string line = file.ReadLine();
+                        if (line == null)
+                            break;
+                        var record = Record.Parse(line);
+                        records.Add(record);
+                    }
                 }
-                file.Close();
+                catch (Exception x)
+                {
+                    ReportError(x.Message);
+                }
+                finally
+                {
+                    file.Close();
+                }
             }
         }
 
@@ -104,6 +135,11 @@ namespace ProvableCode.Patterns
             {
                 return new Record();
             }
+        }
+
+        private static void ReportError(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }
