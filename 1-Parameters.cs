@@ -4,13 +4,11 @@ namespace ProvableCode.Patterns
 {
     public static class Example1
 	{
-		public class Transaction
-		{
-		}
-
 		public class ShoppingService
 		{
-			public Transaction Transaction { get; set; }
+            public void BeginTransaction()
+            {
+            }
 
 			public void AddToCart(int cartId, int itemId, int quantity)
 			{
@@ -20,7 +18,7 @@ namespace ProvableCode.Patterns
 		public static void Right()
 		{
 			ShoppingService shoppingService = new ShoppingService();
-			shoppingService.Transaction = new Transaction();
+            shoppingService.BeginTransaction();
 			shoppingService.AddToCart(1, 2, 3);
 		}
 
