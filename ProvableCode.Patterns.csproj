@@ -8,8 +8,8 @@
     <ProjectGuid>{0B70D966-9E8F-413A-A6C1-AA994759162A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QED2._02</RootNamespace>
-    <AssemblyName>QED2.02</AssemblyName>
+    <RootNamespace>ProvableCode.Patterns</RootNamespace>
+    <AssemblyName>ProvableCode.Patterns</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
