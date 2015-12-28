@@ -50,6 +50,7 @@ namespace ProvableCode.Patterns
                         var record = Record.Parse(line);
                         records.Add(record);
                     }
+                    ProcessRecords(records);
                 }
                 catch (Exception x)
                 {
@@ -135,6 +136,10 @@ namespace ProvableCode.Patterns
             {
                 return new Record();
             }
+        }
+
+        private static void ProcessRecords(List<Record> records)
+        {
         }
 
         private static void ReportError(string message)
