@@ -39,10 +39,10 @@ namespace ProvableCode.Patterns
 				PhoneNumber = "(214) 222-9999"
 			};
 
-			if (!customer.Validate())
-				throw new ApplicationException();
-
-            repository.Save(customer);
+            if (!customer.Validate())
+                Console.WriteLine("Invalid customer");
+            else
+                repository.Save(customer);
 		}
 
 		public static void Wrong()
