@@ -79,6 +79,7 @@ namespace ProvableCode.Patterns
                     var record = Record.Parse(line);
                     records.Add(record);
                 }
+                ProcessRecords(records);
             }
             catch (Exception x)
             {
@@ -103,6 +104,7 @@ namespace ProvableCode.Patterns
                     records.Add(record);
                 }
                 file.Close();
+                ProcessRecords(records);
             }
         }
 
@@ -122,6 +124,7 @@ namespace ProvableCode.Patterns
                         var record = Record.Parse(line);
                         records.Add(record);
                     }
+                    ProcessRecords(records);
                 }
                 catch (Exception x)
                 {
