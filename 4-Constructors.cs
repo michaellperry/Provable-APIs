@@ -1,65 +1,49 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace ProvableCode.Patterns
 {
-	public static class Example4
-	{
-		public class Connection
-		{
-			private string _connectionString;
-			private bool _connected = false;
+    public static class Example4
+    {
+        /*
+        * You must call Bind before you can call Listen.
+        * You may call Bind only once.
+        */
+        public class Socket
+        {
+            public Socket() { }
 
-			public string ConnectionString
-			{
-				get
-				{
-					return _connectionString;
-				}
-				set
-				{
-					if (_connected)
-						throw new ApplicationException();
+            public void Bind(EndPoint localEP) { }
+            public void Listen(int backlog) { }
+        }
 
-					_connectionString = value;
-				}
-			}
+        public static void Right()
+        {
+            var socket = new Socket();
+            socket.Bind(new EndPoint());
+            socket.Listen(1000);
+        }
 
-			public void Connect()
-			{
-				if (String.IsNullOrEmpty(_connectionString))
-					throw new ApplicationException();
+        public static void Wrong1()
+        {
+            var socket = new Socket();
+            // Forgot to call Bind.
+            socket.Listen(1000);
+        }
 
-				_connected = true;
-			}
+        public static void Wrong2()
+        {
+            var socket = new Socket();
+            socket.Bind(new EndPoint());
+            socket.Listen(1000);
+            socket.Bind(new EndPoint());
+            // Called Bind more than once.
+        }
 
-			public void Disconnect()
-			{
-				_connected = false;
-			}
-		}
-
-		public static void Right()
-		{
-			Connection connection = new Connection();
-			connection.ConnectionString = "DataSource=//MyMachine";
-			connection.Connect();
-			connection.Disconnect();
-		}
-
-		public static void Wrong1()
-		{
-			Connection connection = new Connection();
-			connection.Connect();
-			connection.Disconnect();
-		}
-
-		public static void Wrong2()
-		{
-			Connection connection = new Connection();
-			connection.ConnectionString = "DataSource=//MyMachine";
-			connection.Connect();
-			connection.ConnectionString = "DataSource=//HisMachine";
-			connection.Disconnect();
-		}
-	}
+        public class EndPoint
+        {
+        }
+    }
 }
