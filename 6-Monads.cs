@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ProvableCode.Patterns
 {
@@ -17,6 +18,9 @@ namespace ProvableCode.Patterns
 
             public static File Open(string path)
             {
+                if (!Exists(path))
+                    throw new FileNotFoundException();
+
                 return new File();
             }
 
