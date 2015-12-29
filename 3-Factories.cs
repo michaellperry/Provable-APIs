@@ -21,8 +21,18 @@ namespace ProvableCode.Patterns
 			}
 		}
 
+        public class CustomerRepository
+        {
+            public void Save(Customer customer)
+            {
+                if (!customer.Validate())
+                    throw new ArgumentException();
+            }
+        }
+
 		public static void Right()
 		{
+            var repository = new CustomerRepository();
 			Customer customer = new Customer()
 			{
 				Name = "Michael L Perry",
@@ -31,15 +41,20 @@ namespace ProvableCode.Patterns
 
 			if (!customer.Validate())
 				throw new ApplicationException();
+
+            repository.Save(customer);
 		}
 
 		public static void Wrong()
 		{
-			Customer customer = new Customer()
+            var repository = new CustomerRepository();
+            Customer customer = new Customer()
 			{
 				Name = "Michael L Perry",
 				PhoneNumber = "222-9999"
 			};
-		}
-	}
+
+            repository.Save(customer);
+        }
+    }
 }
