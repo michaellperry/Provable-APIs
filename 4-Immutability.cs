@@ -2,7 +2,7 @@
 
 namespace ProvableCode.Patterns
 {
-	public static class Example5
+	public static class Example4
 	{
 		public class Connection
 		{

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace ProvableCode.Patterns
 {
-	public static class Example3
+	public static class Example5
 	{
 		public class Customer
 		{

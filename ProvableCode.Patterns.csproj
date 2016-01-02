@@ -43,10 +43,10 @@
   <ItemGroup>
     <Compile Include="1-Parameters.cs" />
     <Compile Include="2-Callbacks.cs" />
-    <Compile Include="3-Factories.cs" />
-    <Compile Include="5-Immutability.cs" />
+    <Compile Include="5-Factories.cs" />
+    <Compile Include="4-Immutability.cs" />
     <Compile Include="6-Monads.cs" />
-    <Compile Include="4-Constructors.cs" />
+    <Compile Include="3-Constructors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

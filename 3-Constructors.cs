@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProvableCode.Patterns
 {
-    public static class Example4
+    public static class Example3
     {
         /*
         * You must call Bind before you can call Listen.
