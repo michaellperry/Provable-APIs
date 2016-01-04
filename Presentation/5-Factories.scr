@@ -1,0 +1,71 @@
+^{HOME}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{END}^]{UP}{END}
+{ENTER}
+{ENTER}
+public static Customer Create{(}string name, string phoneNumber{END}
+{ENTER}
+{{}
+{ENTER}
+
+if {(}Valid
+{ENTER}
+.Is
+{ENTER}
+{(}phoneN
+{ENTER}
+{END}
+{ENTER}
+{{}
+{ENTER}
+return new 
+{ENTER}
+{ENTER}
+{{}
+{ENTER}
+Name = name,
+{ENTER}
+Pho
+{ENTER}
+ = pho
+{ENTER}
+^{DOWN}^{DOWN}^{DOWN}^{DOWN}{DOWN};
+
+{DOWN}{DOWN}{DOWN}^]{DOWN}{DOWN}{DOWN}{END}{LEFT}{LEFT}{LEFT}{LEFT}{LEFT}{LEFT}private {DOWN}{LEFT}private 
+
+{END}{LEFT}+^{LEFT}+^{LEFT}+^{LEFT}{DELETE}{UP}{END}{LEFT}+^{LEFT}+^{LEFT}+^{LEFT}{DELETE}
+
+{DOWN}{END}
+{ENTER}
+{ENTER}
+cc{ESC}{TAB}string name, string phoneNumber
+{ENTER}
+Name = name;
+{ENTER}
+Phone
+{ENTER}
+ = phone
+{ENTER}
+;
+
+{UP}{UP}{UP}{HOME}+^{RIGHT}+{LEFT}private{ESC}
+
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{END}{(}name, phon
+{ENTER}
+{END};{RIGHT}+{DOWN}+{DOWN}+{DOWN}+{DOWN}{DELETE}
+
+{UP}{UP}{UP}{UP}{UP}+{UP}+{UP}+{UP}+{UP}+{UP}+{UP}+{UP}+{UP}
+
+{DELETE}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}+{DOWN}+{DOWN}
+
+{DELETE}{UP}{UP}{UP}{UP}{UP}{UP}{UP}{LEFT}
+{ENTER}
+else {{}
+{ENTER}
+
+throw new ArgumentEx
+{ENTER}
+{(}{)};
+
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}^{LEFT}^{LEFT}^{LEFT}+^{LEFT}
+{DELETE}^{RIGHT}.Create{RIGHT}"Michael L Perry", "{(}214{)} 222-9999"{END};{RIGHT}+{DOWN}+{DOWN}+{DOWN}+{DOWN}{DELETE}
+
+

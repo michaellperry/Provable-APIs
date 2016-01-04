@@ -1,0 +1,31 @@
+^{HOME}{PGDN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{END}
+{ENTER}
+Func<int, string> loadValue = LoadValue;
+
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}{DELETE}l
+
+^{HOME}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{END}
+{ENTER}
+public TItem Get{(}TKey key, Func<TKey, TItem{RIGHT} loadValue{END}
+{ENTER}
+{{}
+{ENTER}
+{DOWN}
+{ENTER}
+{UP}{UP}
+
+{UP}{UP}{UP}{UP}{UP}{UP}{UP}{UP}{UP}{LEFT}
+{ENTER}
+TItem value;
+{ENTER}
+var cache = this;
+{ENTER}
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{END}
+{ENTER}
+return value;
+
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{LEFT}{LEFT}+^{LEFT}private{ESC}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{LEFT}+^{LEFT}private{ESC}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{LEFT}+^{LEFT}private{ESC}
+
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}
+{ENTER}
+value = cache.Get{(}key, loadValue{)};

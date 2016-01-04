@@ -1,0 +1,19 @@
+^{HOME}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{LEFT}
+{ENTER}
+* You must call Listen before Accept.
+
+{DOWN}
+{ENTER}
+public class ListeningSocket
+{ENTER}
+{{}
+{ENTER}
+public void Accept{(}{)} {{}
+{DOWN}
+{ENTER}
+
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}^{RIGHT}^{RIGHT}+^{RIGHT}+{LEFT}ListeningS
+{ENTER}
+{END}{LEFT}{LEFT} return new 
+{ENTER}
+{(}{)};

@@ -1,0 +1,266 @@
+^{HOME}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{END}{ENTER}
+public class FileMonad<T>
+{ENTER}
+{{}
+{ENTER}
+
+private readonly bool _exists;
+{ENTER}
+private readonly string _error;
+{ENTER}
+private readonly List<T> _records;
+
+{ENTER}
+{ENTER}
+cc{ESC}{TAB}
+{ENTER}
+{ESC}
+
+{UP}{UP}{RIGHT}{RIGHT}+^{LEFT}private{ESC}
+
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}
+{ENTER}
+{ENTER}
+public static FileMonad<T> NotExists{(}{)}
+{ENTER}
+{{}
+{ENTER}
+return new 
+{ENTER}
+{(}false, null, new 
+{ENTER}
+{(}{)}{END};
+
+{DOWN}
+{ENTER}
+{ENTER}
+public static FileMonad<T> Error{(}string error{)}
+{ENTER}
+{{}
+{ENTER}
+^{DOWN}^{DOWN}^{DOWN}return new 
+{ENTER}
+{(}true, error, new 
+{ENTER}
+{(}{)}{)};
+
+{DOWN}
+{ENTER}
+{ENTER}
+public static FileMonad<T> Records{(}List<T> records{END}
+{ENTER}
+{{}
+{ENTER}
+^{DOWN}^{DOWN}^{DOWN}^{DOWN}return new 
+{ENTER}
+{(}true, null, records{)};
+
+{DOWN}{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}
+{ENTER}
+public static class FileProcessor
+{ENTER}
+{{}
+{ENTER}
+
+{RIGHT}{END}public static FileMonad<string> Open{(}string path{)}
+{ENTER}
+{{}
+{ENTER}
+
+{END}^]{DOWN}^{RIGHT}^{RIGHT}^{RIGHT}+^{RIGHT}string{ESC}^{RIGHT}^{RIGHT}^{RIGHT}^{RIGHT}^{RIGHT}^{RIGHT}+^{RIGHT}string{ESC}
+
+{DOWN}{LEFT}{LEFT}{LEFT}{LEFT}{LEFT}^w^wpath{ESC}{DOWN}{DOWN}{RIGHT}{RIGHT}{RIGHT}{RIGHT}{RIGHT}{RIGHT}{RIGHT}^w^wpath{ESC}
+
+{DOWN}{DOWN}{DOWN}{DOWN}{RIGHT}{DOWN}+{DOWN}{DELETE}{END}{LEFT}{LEFT}+^{LEFT}line{ESC}
+
+{DOWN}^{RIGHT}+^{RIGHT}return FileMonad<string>.Rec
+{ENTER}
+
+{DOWN}{DOWN}{DOWN}^{RIGHT}+^{RIGHT}return FileMonad<string>.err
+{ENTER}
+
+{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}
+{ENTER}
+else
+{ENTER}
+{ENTER}
+return FileMonad<string>.NotE
+{ENTER}
+{(}{)};
+
+{ENTER}
+{ENTER}
+public FileMonad<U{ESC}> Parse<U>{(}
+
+Func<T, U>+ parser
+
+{LEFT}{LEFT}{LEFT}{LEFT}{LEFT}{LEFT}{LEFT}{LEFT}+{LEFT}FileMonad<U>{ESC}
+
+{END}
+{ENTER}
+{{}
+{ENTER}
+if {(}!_ex
+{ENTER}
+{)}
+{ENTER}
+return FileMonad<U>.Not
+{ENTER}
+{(}{)};
+{ENTER}
+if {(}_error != null{)}
+{ENTER}
+return FileMonad<U>.Er
+{ENTER}
+{(}_err
+{ENTER}
+{)};
+
+{ENTER}
+{ENTER}
+foreach {(}var oldRecord in _rec
+{ENTER}
+{)}
+{ENTER}
+{{}
+{ENTER}
+var result = parser{(}oldRe
+{ENTER}
+{)};
+
+{ENTER}
+if {(}!result._ex
+{ENTER}
+{END}
+{ENTER}
+return FileMonad<U>.NotE
+{ENTER}
+{(}{)};
+{ENTER}
+if {(}result._er
+{ENTER}
+ != null{)}
+{ENTER}
+return FileMon
+{ENTER}
+<U>.Er
+{ENTER}
+{(}resu
+{ENTER}
+._er
+{ENTER}
+{)};
+
+{UP}{UP}{UP}{UP}{UP}{UP}{UP}
+{ENTER}
+List<U> newRecords = new 
+{ENTER}
+{(}{)};^{DOWN}^{DOWN}^{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{DOWN}{END}
+{ENTER}
+
+newRec
+{ENTER}
+.AddRa
+{ENTER}
+{(}result._re
+{ENTER}
+{END};{DOWN}
+
+{ENTER}
+return FileMonad<U>.Rec
+{ENTER}
+{(}newRec
+{ENTER}
+{)};
+
+{ENTER}
+FileProcessor.Ope
+{ENTER}
+{(}"filename.csv{END}
+{ENTER}
+.Par{(}
+
+ParseRecord{END};{DOWN}
+{ENTER}
+{ENTER}
+private static FileMonad<Record> ParseRecord{(}string line{)}
+{ENTER}
+{{}
+{ENTER}
+^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}^{DOWN}try
+{ENTER}
+{ENTER}
+{{}
+{ENTER}
+var record = Record.Parse{(}line{)};
+{ENTER}
+return FIleMonad
+{ENTER}
+<Record>.Records{(}new 
+{ENTER}
+ {{}record {END};{DOWN}
+{ENTER}
+catch {(}Exception x{)}
+{ENTER}
+{{}
+{ENTER}
+return FileMonad<Record>.Err
+{ENTER}
+{(}x.Mes
+{ENTER}
+{END};
+
+{UP}{UP}{UP}{UP}{UP}{UP}{UP}{UP}{UP}{UP}{UP}{UP}{LEFT}
+{ENTER}
+.
+
+OnError{(}ReportError{)}
+{ENTER}
+.OnSuccess{(}ProcessRecords{)}
+
+{LEFT}{LEFT}<string>^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}+^{RIGHT}+{LEFT}FileMonad<T>{DOWN}{DOWN}^w^w^wif {(}_err
+{ENTER}
+ != null{)}
+{ENTER}
+reportError{(}_error{)};
+{ENTER}
+return this;{UP}{UP}{UP}{UP}{UP}
+{ENTER}
+
+{LEFT}{LEFT}<List<T>>^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}{LEFT}+^{LEFT}FileMonad<T>{DOWN}{DOWN}^w^w^wif {(}_ex
+{ENTER}
+ && _er
+{ENTER}
+ != null{END}
+{ENTER}
+processRecords{(}_rec
+{ENTER}
+{END};
+{ENTER}
+return this;{UP}{UP}{UP}{UP}{UP}
+{ENTER}
+NTER}
+processRecords{(}_rec
+{ENTER}
+{END};
+{ENTER}
+return this;{UP}{UP}{UP}{UP}{UP}
+{ENTER}
+or{)};
+{ENTER}
+return this;{UP}{UP}{UP}{UP}{UP}
+{ENTER}
+
+{LEFT}{LEFT}<List<T>>^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}{LEFT}+^{LEFT}FileMonad<T>{DOWN}{DOWN}^w^w^wif {(}_ex
+{ENTER}
+ && _er
+{ENTER}
+ != null{END}
+{ENTER}
+processRecords{(}_rec
+{ENTER}
+{END};
+{ENTER}
+return this;{UP}{UP}{UP}{UP}{UP}
+{ENTER}
+
