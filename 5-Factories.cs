@@ -9,52 +9,60 @@ namespace ProvableCode.Patterns
 		{
 			private static Regex ValidPhoneNumber = new Regex(@"\([0-9]{3}\) [0-9]{3}-[0-9]{4}");
 
-			public string Name { get; set; }
-			public string PhoneNumber { get; set; }
+			public string Name { get; }
+			public string PhoneNumber { get; }
 
-			public bool Validate()
-			{
-				if (!ValidPhoneNumber.IsMatch(PhoneNumber))
-					return false;
+            private Customer(string name, string phoneNumber)
+            {
+                Name = name;
+                PhoneNumber = phoneNumber;
+            }
 
-				return true;
-			}
+            public static Customer Create(string name, string phoneNumber)
+            {
+                if (ValidPhoneNumber.IsMatch(phoneNumber))
+                {
+                    return new Customer(name, phoneNumber);
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+            }
 		}
 
         public class CustomerRepository
         {
             public void Save(Customer customer)
             {
-                if (!customer.Validate())
-                    throw new ArgumentException();
             }
         }
 
 		public static void Right()
 		{
             var repository = new CustomerRepository();
-			Customer customer = new Customer()
-			{
-				Name = "Michael L Perry",
-				PhoneNumber = "(214) 222-9999"
-			};
-
-            if (!customer.Validate())
-                Console.WriteLine("Invalid customer");
-            else
+            try
+            {
+                Customer customer = Customer.Create("Michael L Perry", "(214) 222-9999");
                 repository.Save(customer);
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
 		}
 
-		public static void Wrong()
-		{
-            var repository = new CustomerRepository();
-            Customer customer = new Customer()
-			{
-				Name = "Michael L Perry",
-				PhoneNumber = "222-9999"
-			};
+		//public static void Wrong()
+		//{
+  //          var repository = new CustomerRepository();
+  //          Customer customer = new Customer()
+		//	{
+		//		Name = "Michael L Perry",
+		//		PhoneNumber = "222-9999"
+		//	};
 
-            repository.Save(customer);
-        }
+  //          repository.Save(customer);
+  //      }
     }
 }

@@ -6,21 +6,19 @@ namespace ProvableCode.Patterns
 	{
 		public class Connection
 		{
-			private string _connectionString;
+			private readonly string _connectionString;
 			private bool _connected = false;
 
-			public string ConnectionString
+            public Connection(string connectionString)
+            {
+                _connectionString = connectionString;
+            }
+
+            public string ConnectionString
 			{
 				get
 				{
 					return _connectionString;
-				}
-				set
-				{
-					if (_connected)
-						throw new ApplicationException();
-
-					_connectionString = value;
 				}
 			}
 
@@ -40,26 +38,25 @@ namespace ProvableCode.Patterns
 
 		public static void Right()
 		{
-			Connection connection = new Connection();
-			connection.ConnectionString = "DataSource=//MyMachine";
+			Connection connection = new Connection("DataSource=//MyMachine");
 			connection.Connect();
 			connection.Disconnect();
 		}
 
-		public static void Wrong1()
-		{
-			Connection connection = new Connection();
-			connection.Connect();
-			connection.Disconnect();
-		}
+		//public static void Wrong1()
+		//{
+		//	Connection connection = new Connection();
+		//	connection.Connect();
+		//	connection.Disconnect();
+		//}
 
-		public static void Wrong2()
-		{
-			Connection connection = new Connection();
-			connection.ConnectionString = "DataSource=//MyMachine";
-			connection.Connect();
-			connection.ConnectionString = "DataSource=//HisMachine";
-			connection.Disconnect();
-		}
+		//public static void Wrong2()
+		//{
+		//	Connection connection = new Connection();
+		//	connection.ConnectionString = "DataSource=//MyMachine";
+		//	connection.Connect();
+		//	connection.ConnectionString = "DataSource=//HisMachine";
+		//	connection.Disconnect();
+		//}
 	}
 }
