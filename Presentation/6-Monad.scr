@@ -61,11 +61,13 @@ public static class FileProcessor
 {ENTER}
 {{}
 {ENTER}
+// Move the File class here
 
-{RIGHT}{END}public static FileMonad<string> Open{(}string path{)}
+{LEFT}{ENTER}{ENTER}public static FileMonad<string> Open{(}string path{)}
 {ENTER}
 {{}
 {ENTER}
+// Move the Right code here
 
 {END}^]{DOWN}^{RIGHT}^{RIGHT}^{RIGHT}+^{RIGHT}string{ESC}^{RIGHT}^{RIGHT}^{RIGHT}^{RIGHT}^{RIGHT}^{RIGHT}+^{RIGHT}string{ESC}
 
@@ -86,7 +88,7 @@ else
 {ENTER}
 return FileMonad<string>.NotE
 {ENTER}
-{(}{)};
+{(}{)};  // Move inside the FileMonad class
 
 {ENTER}
 {ENTER}
@@ -171,7 +173,7 @@ return FileMonad<U>.Rec
 {ENTER}
 {(}newRec
 {ENTER}
-{)};
+{)};  // Go to the Right function
 
 {ENTER}
 FileProcessor.Ope
@@ -223,30 +225,6 @@ OnError{(}ReportError{)}
  != null{)}
 {ENTER}
 reportError{(}_error{)};
-{ENTER}
-return this;{UP}{UP}{UP}{UP}{UP}
-{ENTER}
-
-{LEFT}{LEFT}<List<T>>^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}^{LEFT}{LEFT}+^{LEFT}FileMonad<T>{DOWN}{DOWN}^w^w^wif {(}_ex
-{ENTER}
- && _er
-{ENTER}
- != null{END}
-{ENTER}
-processRecords{(}_rec
-{ENTER}
-{END};
-{ENTER}
-return this;{UP}{UP}{UP}{UP}{UP}
-{ENTER}
-NTER}
-processRecords{(}_rec
-{ENTER}
-{END};
-{ENTER}
-return this;{UP}{UP}{UP}{UP}{UP}
-{ENTER}
-or{)};
 {ENTER}
 return this;{UP}{UP}{UP}{UP}{UP}
 {ENTER}
